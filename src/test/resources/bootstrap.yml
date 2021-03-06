@@ -1,0 +1,12 @@
+---
+
+spring:
+  cloud:
+    config:
+      enabled: false
+  mail:
+    username: "changeit"
+    password: "changeit"
+    host: "localhost"
+    port: 3025
+    protocol: "smtps"

@@ -1,0 +1,14 @@
+---
+
+deployment:
+  name: email-service
+  image: bilalcaliskan/email-service:1.1.11
+  replicaCount: 1
+  serverPort: 8090
+  managementPort: 8091
+  managementEndpoint: /actuator/health
+  environment:
+    springActiveProfile: dev
+    configServiceHost: config-service
+    configServicePort: 8888
+    timezone: Europe/Istanbul
