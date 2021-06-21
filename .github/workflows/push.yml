@@ -21,8 +21,9 @@ jobs:
           java-package: jdk
           architecture: x64
       - name: Run the Maven test phase
-        run: |
-          mvn clean verify
+        env:
+          SPRING_PROFILES_ACTIVE: unit-test
+        run: mvn clean verify
 
   dockerize_and_commit:
     needs:
@@ -44,6 +45,8 @@ jobs:
       - name: Set release_version variable
         run: echo "release_version=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec | cut -d "=" -f 2)" >> $GITHUB_ENV
       - name: Run the Maven package phase
+        env:
+          SPRING_PROFILES_ACTIVE: unit-test
         run: mvn clean package
       - name: Build and tag Docker image
         run: |
