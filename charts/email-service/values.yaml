@@ -2,7 +2,7 @@
 
 deployment:
   name: email-service
-  image: vpnbeast/email-service:1.1.14
+  image: vpnbeast/email-service:1.1.15
   replicaCount: 1
   serverPort: 8090
   managementPort: 8091

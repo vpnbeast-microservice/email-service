@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.thevpnbeast</groupId>
     <artifactId>email-service</artifactId>
-    <version>1.1.14</version>
+    <version>1.1.15</version>
     <name>email-service</name>
     <description>Email Service Over Amazon SES</description>
 
