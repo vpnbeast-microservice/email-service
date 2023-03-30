@@ -54,7 +54,7 @@ jobs:
           docker build . --file Dockerfile --build-arg JAR_FILE=target/email-service-${{ env.release_version }}.jar --tag vpnbeast/email-service:latest
           docker tag vpnbeast/email-service:latest vpnbeast/email-service:${{ env.release_version }}
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: vpnbeast/email-service
           tags: "latest,${{ env.release_version }}"
